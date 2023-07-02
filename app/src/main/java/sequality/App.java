@@ -4,11 +4,63 @@
 package sequality;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+  public String getGreeting() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+  public int sum(int x, int y) {
+    return x + y;
+  }
+
+  public double ave(int x) {
+    return (double) x / 2;
+  }
+
+  public int sum2(int x, int y) {
+    int sum = 0;
+    for (int i = x; i <= y; i++) {
+      sum += i;
     }
+    return sum;
+  }
+
+  public double ave2(int x, int y) {
+    int sum = 0;
+    for (int i = x; i <= y; i++) {
+      sum += i;
+    }
+    return (double) sum / (y - x + 1);
+  }
+
+  public int sumodd(int x, int y) {
+    int sum = 0;
+    for (int i = x; i <= y; i++) {
+      if (i % 2 == 1) {
+        sum += i;
+      }
+    }
+    return sum;
+  }
+
+  public int sumeven(int x, int y) {
+    int sum = 0;
+    for (int i = x; i <= y; i++) {
+      if (i % 2 == 0) {
+        sum += i;
+      }
+    }
+    return sum;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(new App().getGreeting());
+    System.out
+        .println(
+            "Sum of 2 and 3 is " + new App().sum(2, 3) + " Average is " + new App().ave(new App().sum(2, 3)) + ".");
+    System.out
+        .println("Sum of 1 and 10 is " + new App().sum2(1, 10) + " Average is " + new App().ave2(1, 10) + ".");
+    System.out
+        .println("Sum of odd of 1 and 10 is " + new App().sumodd(1, 10) + " Sum of even is "
+            + new App().sumeven(1, 10) + ".");
+  }
 }
